@@ -54,7 +54,9 @@ CREATE TABLE dept_manager(
 	emp_no INTEGER NOT NULL,
 	from_date DATE,
 	to_date DATE,
-	id SERIAL PRIMARY KEY
+	id SERIAL PRIMARY KEY,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	FOREIGN KEY (dept_no) REFERENCES department(dept_no)
 );
 
 -- Adding, then expirementing with ALTER TABLE to add foreign keys to dept_manager table. 
